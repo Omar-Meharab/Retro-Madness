@@ -1,4 +1,3 @@
-import './AddBlogs.css';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
@@ -56,7 +55,7 @@ const AddBlogs = () => {
                             </div>
                             <br />
                             <div className="form-group">
-                                <input className="btn btn-warning form-control" type="file" onChange={handleImageUpload} />
+                                <input className="bg-yellow-100" type="file" onChange={handleImageUpload} />
                             </div>
                             <br />
                             <div className="form-group">
