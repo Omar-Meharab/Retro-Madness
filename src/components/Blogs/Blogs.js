@@ -15,7 +15,7 @@ const Blogs = () => {
     return (
         <section>
             <div className="">
-                <div className="grid grid-cols-3 m-5 p-4 gap-6">
+                <div className="grid grid-cols-3 m-5 p-5 gap-6">
                     {
                         blogs.map(blogs => <BlogsDetail blogs={blogs} key={blogs._id}></BlogsDetail>)
                     }
