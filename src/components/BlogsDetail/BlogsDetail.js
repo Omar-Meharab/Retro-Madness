@@ -11,7 +11,7 @@ const BlogsDetail = (props) => {
         <div onClick={() => getBlog(_id)} className="p-5 bg-white">
             <div className="">
                 <img className="" src={imageURL} alt="" />
-                <h1 className="text-3xl text-center font-bold">{title}</h1>
+                <h1 className="text-3xl text-center font-bold pt-5">{title}</h1>
             </div>
         </div>
     );

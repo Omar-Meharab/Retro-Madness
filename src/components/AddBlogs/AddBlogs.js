@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
+import Navbar from '../Navbar/Navbar';
+import Sidebar from '../Sidebar/Sidebar';
 
 const AddBlogs = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -13,7 +15,7 @@ const AddBlogs = () => {
             description: data.description,
             imageURL: imageURL
         };
-        const url = `http://localhost:5000/addBlogs`
+        const url = `https://guarded-citadel-20771.herokuapp.com/addBlogs`
         fetch(url, {
             method: 'POST',
             headers: {
@@ -42,28 +44,36 @@ const AddBlogs = () => {
 
     return (
         <section>
-            {/* <Sidebar /> */}
-            <div className="grid grid-flow-row auto-rows-max feedback py-5">
-                <div className="container">
-                    <div className="text-xl text-center font-bold text-white mb-5">
-                        <h1 className="text-primary">Write Your Blog</h1>
-                    </div>
-                    <div className="col-md-9 text-center mx-auto">
-                        <form onSubmit={handleSubmit(onSubmit)}>
-                            <div className="form-group">
-                                <textarea cols="150" rows="" className="form-control" name="title" placeholder="Title" {...register("title")} />
-                            </div>
-                            <br />
-                            <div className="form-group">
-                                <input className="bg-yellow-100" type="file" onChange={handleImageUpload} />
-                            </div>
-                            <br />
-                            <div className="form-group">
-                                <textarea cols="150" rows="200" name="description" className="form-control py-5" placeholder="Description" {...register("description")} />
-                            </div>
-                            <br />
-                            <input className="btn btn-primary" type="submit" />
-                        </form>
+            <div>
+                <Navbar></Navbar>
+            </div>
+            <div>
+                <Sidebar />
+                <div className="grid grid-flow-row auto-rows-max feedback p-5 float-right">
+                    <div className="container">
+                        <div className="text-xl text-center font-bold text-white mb-5">
+                            <h1 className="text-primary">Write Your Blog</h1>
+                        </div>
+                        <div className="col-md-9 text-center mx-auto">
+                            <form onSubmit={handleSubmit(onSubmit)}>
+                                <div className="form-group">
+                                    <textarea cols="150" rows="" className="form-control" name="title" placeholder="Title" {...register("title")} />
+                                </div>
+                                <br />
+                                <div className="flex justify-center">
+                                    <div className="form-group">
+                                        <input className="bg-black" type="file" onChange={handleImageUpload} />
+                                    </div>
+                                    <br />
+                                    <input className="bg-black font-bold text-white" type="submit" />
+                                </div>
+                                <br />
+                                <div className="form-group">
+                                    <textarea cols="150" rows="200" name="description" className="form-control py-5" placeholder="Description" {...register("description")} />
+                                </div>
+                                <br />
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
