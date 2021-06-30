@@ -2,7 +2,7 @@ import React from 'react';
 
 const Navbar = () => {
     return (
-        <div className="sticky top-0 z-50 w-full">
+        <div className="fixed top-0 z-50 w-full">
             <div className="flex justify-between py-4 px-24 bg-black text-white font-bold">
                 <h1>Retro Madness</h1>
                 <ul className="flex space-x-20 justify-between">
